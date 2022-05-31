@@ -4,243 +4,198 @@
     margin: 0;
     padding: 0;
     overflow: hidden;
+    font-family: 'Red Hat Display', sans-serif;
+    transition: .3s ease-in-out;
 }
 :root {
-    --Pale-blue: hsl(225, 100%, 94%);
-    --btn-color: hsl(245, 75%, 52%);
-    --hover-btn-color: hsla(245, 75%, 52%, .75);
-    --bg-color: hsl(225, 100%, 98%);
-    --paragraph-text-color: hsl(224, 23%, 55%);
-    --header-text-color: hsl(223, 47%, 23%);
-    --container-bg: hsl(0, 0%, 100%);
-    --default: 'Red Hat Display', sans-serif;
+    font-size: 18px;
+    --clr-blue-1: hsl(225, 100%, 98%);
+    --clr-blue-2: hsl(225, 100%, 94%);
+    --clr-blue-3: hsl(224, 23%, 55%);
+    --clr-blue-4: hsl(245, 75%, 52%);
+    --clr-blue-5: hsl(223, 47%, 23%);
 }
 body  {
     margin: 0;
-    padding: 0;
-    width: 100vw;
-    height: 100vh;
-    background-color: var(--Pale-blue);
+    min-height: 100vh;
+    background-color: var(--clr-blue-2);
     background-image: url(./images/pattern-background-desktop.svg);
     background-repeat: no-repeat;
-    background-size: contain;
     background-position: top;
+    background-size: 100% calc(100vh - 50%);
     display: grid;
     place-items: center;
-    font-family: 'Red Hat Display', sans-serif !important;
 }
-body > .container  {
-    width: 25%;
-    height: 75%;
-    background-color: var(--container-bg);
-    border-radius: 20px;
-    overflow: hidden;
+
+body > .wrapper  {
+    width: 30rem;
+    border-radius: 1.5rem;
+    box-shadow: 0 25px 25px rgba(0, 0, 0, .1);
 }
-body > .container > .top {
+
+body > .wrapper > img {
+    display: block;
     width: 100%;
-    height: 35%;
-    background-image: url(./images/illustration-hero.svg);
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: center;
 }
-body > .container > .bottom {
-    width: 100%;
-    height: 65%;
-    display: flex;
-    flex-direction: column;
-    /* justify-content: center; */
-    align-items: center;
-}
-body > .container > .bottom > .h1 {
-    width: 100%;
-    height: 10%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-body > .container > .bottom > .h1 > h1 {
-    font-size: 30px;
-    font-weight: 900;
-    line-height: 40px;
-    height: 40px;
-    color: var(--header-text-color);
-}
-body > .container > .bottom > .paragraph {
-    width: 100%;
-    height: 18%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-body > .container > .bottom > .paragraph > p {
-    font-size: 16px;
-    font-weight: 500;
-    line-height: 26px;
-    width: 70%;
-    color: var(--paragraph-text-color);
+
+body > .wrapper > div {
+    padding: 3rem;
     text-align: center;
 }
-body > .container > .bottom > .button {
-    width: 80%;
-    height: 22%;
+
+body > .wrapper > div > h1 {
+    font-size: 2rem;
+    font-weight: 900;
+    margin-bottom: 1.1rem;
+    color: var(--clr-blue-5);
+}
+
+body > .wrapper > div > p {
+    font-size: 1.1rem;
+    font-weight: 500;
+    line-height: 1.5;
+    color: var(--clr-blue-3);
+}
+
+body > .wrapper > div > .button {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: var(--clr-blue-1);
+    padding: 1.5rem 1.75rem;
+    margin: 1.5rem 0 2rem;
+    border-radius: 1rem;
+}
+
+body > .wrapper > div > .button > .left {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    border-radius: 10px;
-    background-color: var(--bg-color);
 }
-body > .container > .bottom > .button > .left {
-    width: 60%;
-    height: 100%;
-    display: flex;
-    justify-content: space-evenly;
-    align-items: center;
+
+body > .wrapper > div > .button > .left > img {
+    width: 3.25rem;
 }
-body > .container > .bottom > .button > .left > .mid-content {
-    width: 50%;
-    height: 100%;
+
+body > .wrapper > div > .button > .left > .mid-content {
+    margin-left: 1.5rem;
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
-    align-items: center;
+    justify-content: center;
+    align-items: flex-start;
 }
-body > .container > .bottom > .button > .left > .mid-content > h1:first-child {
-    font-size: 16px;
+
+body > .wrapper > div > .button > .left > .mid-content > p:first-child {
     font-weight: 900;
-    line-height: 18px;
-    height: 18px;
-    color: var(--header-text-color);
-    margin-top: 25%;
+    height: 1.5rem;
+    color: var(--clr-blue-5);
 }
-body > .container > .bottom > .button > .left > .mid-content > h1:last-child {
-    font-size: 16px;
+
+body > .wrapper > div > .button > .left > .mid-content > p:last-child {
     font-weight: 500;
-    line-height: 18px;
-    height: 18px;
-    color: var(--paragraph-text-color);
-    margin-bottom: 25%;
+    height: 1.5rem;
+    color: var(--clr-blue-3);
 }
-body > .container > .bottom > .button > .right {
-    width: 40%;
-    height: 100%;
-    display: flex;
-    justify-content: flex-end;
-    align-items: center;
-}
-body > .container > .bottom > .button > .right > h1 {
-    font-size: 16px;
+
+body > .wrapper > div > .button > a {
+    width: max-content;
     font-weight: 900;
-    line-height: 26px;
-    height: 26px;
-    color: var(--btn-color);
+    line-height: 1.5;
+    height: 1.5;
+    color: var(--clr-blue-4);
     text-decoration: underline;
-    margin-right: 12.5%;
-    cursor: pointer;
 }
-body > .container > .bottom > .button > .right > h1:hover {
+
+body > .wrapper > div > .button > a:hover {
     text-decoration: none;
-    color: var(--hover-btn-color);
-    transition: .4s;
 }
-body > .container > .bottom > button {
-    width: 80%;
-    height: 11%;
-    background-color: var(--btn-color);
+
+body > .wrapper > div > button {
+    width: 100%;
+    padding: 1.25rem 0;
+    background-color: var(--clr-blue-4);
+    color: var(--clr-blue-1);
     border: none;
-    border-radius: 10px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    box-shadow: 0px 20px 30px -10px grey;
-    cursor: pointer;
-}
-body > .container > .bottom > button:hover {
-    background-color: var(--hover-btn-color);
-    transition: .3s;
-}
-body > .container > .bottom > button > h1 {
-    font-size: 16px;
-    font-weight: 700;
-    line-height: 18px;
-    height: 18px;
-    font-family: var(--default);
-    color: var(--container-bg);
-    text-align: center;
-}
-body > .container > .bottom > h1 {
-    font-size: 16px;
+    box-shadow: 0 1.1rem 1.8rem hsl(245, 75%, 90%);
+    font-size: inherit;
     font-weight: 900;
-    line-height: 18px;
-    color: var(--paragraph-text-color);
-    text-align: center;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    cursor: pointer;
+    border-radius: 1rem;
 }
-body > .container > .bottom > h1:hover {
-    color: var(--header-text-color);
-    transition: .3s;
+
+body > .wrapper > div > button:hover {
+    filter: opacity(75%);
 }
-body > .container > .bottom > *:first-child {
-    margin-top: 30px;
-    margin-bottom: 5px;
+
+body > .wrapper > div > a {
+    display: block;
+    width: max-content;
+    font-weight: 900;
+    line-height: 1.13;
+    text-decoration: none;
+    margin: 3rem auto 0 auto;
+    color: var(--clr-blue-3);
 }
-body > .container > .bottom > *:nth-child(2) {
-    margin-bottom: 5px;
+
+body > .wrapper > div > a:hover {
+    color: var(--clr-blue-5);
 }
-body > .container > .bottom > *:nth-child(3) {
-    margin-top: 10px;
-    margin-bottom: 20px;
-}
-body > .container > .bottom > *:nth-child(4) {
-    margin-top: 10px;
-    margin-bottom: 15px;
-}
-body > .container > .bottom > *:last-child {
-    margin-top: 20px;
-    margin-bottom: 45px;
-}
-@media screen and (min-width:360px) and (max-width:480px)  {
+
+
+@media screen and (max-width: 375px) {
     body {
         background-image: url(./images/pattern-background-mobile.svg);
-        background-position: top;
-    }
-    body > .container {
-        width: 92.5%;
-        margin: auto;
-        transition: all .4s;
     }
 
-}
-@media screen and(min-width:481px) and (max-width:720px)  {
-    body > .container {
-        width: 50%;
-        height: 75%;
-        transition: all .4s;
+    body > .wrapper {
+        width: 85%;
+    }
+  
+    body > .wrapper > div {
+        padding: 2.25rem 1.8rem;
     }
 
-}
-@media screen and (min-width:721px)and(max-width:1080px)  {
-    body > .container {
-        width: 40%;
-        transition: all .4s;
+    body > .wrapper > div > h1 {
+        font-size: 1.25rem;
     }
 
-}
-@media screen and (min-width:1081px)and(max-width:1440px)  {
-    body > .container {
-        width: 25%;
-        transition: all .4s;
+    body > .wrapper > div > p {
+        font-size: .85rem;
     }
 
-}
-@media screen and (min-width:1441px)and(max-width:2160px)  {
-    body > .container {
-        width: 15%;
-        transition: all .4s;
+    body > .wrapper > div > .button {
+        padding: 1.25rem 1rem;
+        margin: 1rem 0 1.5rem;
     }
 
-}
+    body > .wrapper > div > .button > .left > .mid-content {
+        margin-left: .75rem;
+    }
 
+    body > .wrapper > div > .button > .left > img {
+        width: 2.5rem;
+    }
+
+    body > .wrapper > div > .button > .left > .mid-content > p:first-child {
+        font-size: .85rem;
+        height: 1.2rem;
+    }
+    
+    body > .wrapper > div > .button > .left > .mid-content > p:last-child {
+        font-size: .8rem;
+        height: 1.2rem;
+    }
+
+    body > .wrapper > div > .button > a {
+        font-size: .8rem;
+    }
+
+    body > .wrapper > div > button {
+        font-size: .8rem;
+        padding: .8rem 0;
+    }
+
+    body > .wrapper > div > a {
+        font-size: .9rem;
+        margin: 1.8rem auto 0 auto;
+    }
+  }
