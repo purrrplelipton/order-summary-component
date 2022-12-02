@@ -30,7 +30,7 @@ Users should be able to:
 
 ### Links
 
-- [Solution URL](https://your-solution-url.com)
+- [Solution URL](https://www.frontendmentor.io/solutions/order-summary-component-with-chakraui-uSkPjizaiR)
 - [Live Site URL](https://purrrplelipton.github.io/order-summary-component)
 
 ## My process
