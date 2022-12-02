@@ -1,4 +1,4 @@
-import { React } from "react";
+import { React, Fragment } from "react";
 import {
   Heading,
   Text,
@@ -12,64 +12,74 @@ import {
 import illustrationHero from "./assets/images/illustration-hero.svg";
 import iconMusic from "./assets/images/icon-music.svg";
 import patternBackgroundMobile from "./assets/images/pattern-background-mobile.svg";
+import patternBackgroundDesktop from "./assets/images/pattern-background-desktop.svg";
 
-function App() {
-  return (
+const App = () => (
+  <Fragment>
     <Grid
       as={"article"}
-      minHeight={"100vh"}
-      minWidth={"full"}
-      padding={7}
+      minH={"100vh"}
+      p={7}
       placeContent={"center"}
-      backgroundColor={"blu.94"}
+      bg={"blu.94"}
       color={"blu.55"}
-      backgroundImage={patternBackgroundMobile}
-      backgroundRepeat={"no-repeat"}
-      backgroundSize={"contain"}
-      backgroundPosition={"top"}
+      bgImg={{ base: patternBackgroundMobile, md: patternBackgroundDesktop }}
+      bgRepeat={"no-repeat"}
+      bgSize={"contain"}
+      bgPos={"top"}
     >
-      <Grid backgroundColor={"white"} borderRadius={"2xl"} overflow={"hidden"}>
+      <Grid
+        bg={"white"}
+        borderRadius={"2xl"}
+        overflow={"hidden"}
+        maxW={"md"}
+        shadow={"2xl"}
+      >
         <Box>
           <Image
             src={illustrationHero}
             alt={"an illustration of a woman listening to music with earphones"}
             objectFit={"cover"}
-            width={"full"}
-            height={"full"}
+            w={"full"}
+            h={"full"}
           />
         </Box>
-        <Grid gap={6} padding={7} paddingY={8} textAlign={"center"}>
+        <Grid
+          gap={{ base: 6, md: 7 }}
+          p={{ base: 7, md: 12 }}
+          py={{ base: 8, md: 12 }}
+          textAlign={"center"}
+        >
           <Heading
             as={"h1"}
-            fontSize={"2xl"}
+            fontSize={{ base: "2xl", md: "3xl" }}
             fontWeight={"black"}
             color={"blu.23"}
           >
             Order Summary
           </Heading>
-          <Text>
+          <Text fontWeight={"medium"}>
             You can now listen to millions of songs, audiobooks, and podcasts on
             any device anywhere you like!
           </Text>
           <Grid
-            gridTemplateColumns={"1fr auto"}
-            backgroundColor={"blu.98"}
+            templateColumns={"1fr auto"}
+            bg={"blu.98"}
             borderRadius={"xl"}
-            padding={4}
-            verticalAlign={"center"}
-            fontSize={"sm"}
+            p={{ base: 4, md: 6 }}
+            fontSize={{ base: "sm", md: "lg" }}
           >
             <Grid
               placeContent={"center"}
-              gap={4}
-              gridTemplateColumns={"auto 1fr"}
+              gap={{ base: 4, md: 6 }}
+              templateColumns={"auto 1fr"}
             >
               <Image src={iconMusic} alt={"a beamed note icon"} />
               <Grid alignContent={"center"} textAlign={"left"}>
                 <Heading
                   as={"h2"}
                   fontSize={"inherit"}
-                  fontWeight={"bold"}
+                  fontWeight={"black"}
                   color={"blu.23"}
                 >
                   Annual Plan
@@ -78,39 +88,39 @@ function App() {
               </Grid>
             </Grid>
             <Button
-              padding={0}
+              p={0}
               borderRadius={0}
               background={"transparent"}
               color={"blu.52"}
               fontSize={"inherit"}
-              textDecoration={"underline"}
-              _hover={{ color: "blu.active", textDecoration: "none" }}
+              textDecor={"underline"}
+              _hover={{ color: "blu.active", textDecor: "none" }}
             >
               Change
             </Button>
           </Grid>
           <ButtonGroup
             display={"grid"}
-            gap={2}
-            marginInline={"auto"}
-            width={"full"}
+            gap={{ base: 2, md: 5 }}
+            fontSize={{ base: "sm", md: "lg" }}
           >
             <Button
-              width={"full"}
-              backgroundColor={"blu.52"}
+              bg={"blu.52"}
               color={"white"}
-              paddingY={"1.5rem"}
-              fontSize={"sm"}
+              py={{ base: 6, md: 7 }}
+              fontSize={"inherit"}
               borderRadius={"xl"}
-              _hover={{ backgroundColor: "blu.active" }}
+              boxShadow={"2xl"}
+              _hover={{ bg: "blu.active" }}
             >
               Proceed to Payment
             </Button>
             <Button
-              fontSize={"sm"}
+              m={"0 !important"}
+              p={{ base: 6, md: 5 }}
+              fontSize={"inherit"}
               color={"blu.55"}
               background={"transparent"}
-              borderRadius={0}
               _hover={{ background: "initial", color: "blu.23" }}
             >
               Cancel Order
@@ -119,7 +129,31 @@ function App() {
         </Grid>
       </Grid>
     </Grid>
-  );
-}
+    <Box as={"footer"} pos={"absolute"} bottom={0} right={0} fontSize={"sm"}>
+      <Text as={"p"}>
+        Challenge by{" "}
+        <Text
+          as={"a"}
+          href="https://www.frontendmentor.io?ref=challenge"
+          target="_blank"
+          color={"blu.55"}
+          _hover={{ color: "blu.23", textDecor: "underline" }}
+        >
+          Frontend Mentor
+        </Text>
+        . Coded by{" "}
+        <Text
+          as={"a"}
+          href="https://www.frontendmentor.io/profile/purrrplelipton"
+          color={"blu.55"}
+          _hover={{ color: "blu.23", textDecor: "underline" }}
+        >
+          Toby
+        </Text>
+        .
+      </Text>
+    </Box>
+  </Fragment>
+);
 
 export default App;
